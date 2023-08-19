@@ -1,0 +1,16 @@
+.App {
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    color: white;
+    overflow: auto;
+}
+
+.formContainer {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
