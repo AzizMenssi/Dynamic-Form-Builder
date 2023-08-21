@@ -1,0 +1,27 @@
+.inputContent{
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inputOptions{
+    flex: 1;
+    padding: 10px;
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+.selectOptions{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+    margin-bottom: 10px;
+}
+.optionContainer{
+display: flex;
+flex-direction: column;
+}

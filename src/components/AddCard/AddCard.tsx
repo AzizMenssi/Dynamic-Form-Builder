@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const AddCard: React.FC = () => {
     return (
-        <div className={styles.title}>
-            <Link to={`/formBuilder`}>+</Link>
-        </div >
+        <Link to={`/formBuilder?action=create`} className={styles.title}>
+                +
+        </Link>
     );
 }
 export default AddCard;

@@ -5,13 +5,17 @@ import store from './redux/store/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import {SocketProvider} from './socket/socketService';
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    {/* @ts-ignore */}
+    <SocketProvider>
+      <Provider store={store}>
+        <App />
+      </Provider>
+      </SocketProvider>
   </React.StrictMode>
 );
 // If you want to start measuring performance in your app, pass a function

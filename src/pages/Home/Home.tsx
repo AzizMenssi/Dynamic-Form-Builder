@@ -1,47 +1,35 @@
 import styles from './Home.module.css';
 import FormCard from '../../components/FormCard/FormCard';
 import AddCard from '../../components/AddCard/AddCard';
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import SubmissionCard from '../../components/SubmissionCard/submissionCard';
 const Home: React.FC = () => {
-  const formsData = [
-    {
-      id: 1,
-      name: 'Form 1',
-      description: 'Description for Form 1',
-    },
-    {
-      id: 2,
-      name: 'Form 2',
-      description: 'Description for Form 2',
-    },
-    {
-      id: 3,
-      name: 'Form 3',
-      description: 'Description for Form 3',
-    },
-    {
-      id: 4,
-      name: 'Form 4',
-      description: 'Description for Form 4',
-    },
-    {
-      id: 5,
-      name: 'Form 5',
-      description: 'Description for Form 5',
-    },
-  ];
-  const forms = useSelector((state: any) => state.createForm.forms);
+  const formsList = useSelector((state: any) => state.forms.forms);
+  const submissionsList = useSelector((state: any) => state.submissions.submissions);
+  const [forms, setForms] = useState([]);
+  const [submissions, setSubmissions] = useState([]);
   useEffect(() => {
-    console.log(forms)
-  }, [forms]); return (
+    setForms(formsList)
+  }, [formsList])
+  useEffect(() => {
+    setSubmissions(submissionsList)
+  }, [submissionsList])
+  return (
     <div className={styles.App}>
       <h1>Home Page</h1>
+      <h2>Forms</h2>
       <div className={styles.formContainer}>
-        {formsData.map((form) => (
-          <FormCard key={form.id} form={form} />
+        {forms?.map((form: any) => (
+          <FormCard key={form._id} form={form} />
         ))}
         <AddCard />
+      </div>
+      <h2>Submissions</h2>
+      <div className={styles.formContainer}>
+        {submissions?.map((submission: any) => (
+          <SubmissionCard key={submission._id} submission={submission} />
+        ))}
       </div>
     </div>
   );

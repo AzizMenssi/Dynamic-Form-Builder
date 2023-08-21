@@ -1,0 +1,9 @@
+.inputGenerator{
+    display:flex;
+    background: white;
+    margin: 20px;
+    justify-content: center;
+    gap: 20px;
+    height: 40px;
+    padding: 5px;
+}
